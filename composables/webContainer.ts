@@ -2,10 +2,10 @@ import { type FileSystemTree, WebContainer } from '@webcontainer/api'
 
 let _webContainerPromise: Promise<WebContainer>
 
-export async function useWebContainer() {
+export function useWebContainer() {
   if (!_webContainerPromise)
     _webContainerPromise = WebContainer.boot()
-  return await _webContainerPromise
+  return _webContainerPromise
 }
 
 export function globFilesToWebContainerFs(
